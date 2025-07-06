@@ -1,10 +1,9 @@
-import dev.extframework.gradle.common.commonUtil
-import dev.extframework.gradle.common.extFramework
+import com.kaolinmc.gradle.common.*
 
 plugins {
     kotlin("jvm") version "1.9.21"
 
-    id("dev.extframework.common") version "1.0.43"
+    id("com.kaolinmc.common") version "0.1"
 }
 
 tasks.wrapper {
@@ -16,7 +15,6 @@ dependencies {
 
     testImplementation(project(":tiny"))
     testImplementation(project(":proguard"))
-
 }
 
 common {
@@ -27,23 +25,22 @@ common {
             commonPom {
                 name.set("Archive Mapper")
                 description.set("A mapping parser for de-obfuscation mappings(proguard)")
-                url.set("https://github.com/yakclient/archive-mapper")
+                url.set("https://github.com/kaolinmc/archive-mapper")
             }
         }
     }
 }
 
 allprojects {
-    apply(plugin = "dev.extframework.common")
+    apply(plugin = "com.kaolinmc.common")
     apply(plugin = "org.jetbrains.kotlin.jvm")
 
-    group = "dev.extframework"
+    group = "com.kaolinmc"
     version = "1.3.6-SNAPSHOT"
 
     repositories {
         mavenCentral()
-        extFramework()
-        mavenLocal()
+        kaolin()
     }
 
     configurations.all {
@@ -59,7 +56,8 @@ allprojects {
     }
 
     dependencies {
-        commonUtil()
+        implementation(commonUtil())
+        implementation(archives())
 
         implementation(kotlin("stdlib"))
         implementation(kotlin("reflect"))
@@ -79,16 +77,16 @@ allprojects {
                     commonPom {
                         packaging = "jar"
 
-                        withExtFrameworkRepo()
+                        withKaolinRepo()
 
                         defaultDevelopers()
                         gnuLicense()
-                        extFrameworkScm("archive-mapper")
+                        kaolinScm("archive-mapper")
                     }
                 }
             }
             repositories {
-                extFramework(credentials = propertyCredentialProvider)
+                kaolin(credentials = propertyCredentialProvider)
             }
         }
     }

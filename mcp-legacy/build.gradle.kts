@@ -1,4 +1,4 @@
-import dev.extframework.gradle.common.archives
+import com.kaolinmc.gradle.common.archives
 
 dependencies {
     implementation(project(":"))
@@ -16,7 +16,7 @@ common {
             commonPom {
                 name.set("Archive Mapper Minecraft Coder Pack support")
                 description.set("A mappings parser with support for MCP")
-                url.set("https://github.com/yakclient/archive-mapper")
+                url.set("https://github.com/kaolinmc/archive-mapper")
             }
         }
     }

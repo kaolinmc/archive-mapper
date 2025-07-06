@@ -1,4 +1,4 @@
-import dev.extframework.gradle.common.archives
+import com.kaolinmc.gradle.common.archives
 
 dependencies {
     implementation(project(":"))
@@ -18,7 +18,7 @@ common {
             commonPom {
                 name.set("Archive Mapper Transform")
                 description.set("An archive transformation library for applying mappings.")
-                url.set("https://github.com/yakclient/archive-mapper")
+                url.set("https://github.com/kaolinmc/archive-mapper")
             }
         }
     }

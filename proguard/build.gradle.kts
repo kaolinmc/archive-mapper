@@ -11,7 +11,7 @@ common {
             commonPom {
                 name.set("Archive Mapper Proguard mappings support")
                 description.set("A mappings parser with support for Proguard")
-                url.set("https://github.com/yakclient/archive-mapper")
+                url.set("https://github.com/kaolinmc/archive-mapper")
             }
         }
     }

@@ -1,1 +1,1 @@
-dev.extframework.archive.mapper.parsers.ProGuardMappingParser
+com.kaolinmc.archive.mapper.parsers.ProGuardMappingParser
